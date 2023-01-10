@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Projects | Silas Bartol</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/master.css">
+    <script src="js/master.js" charset="utf-8" defer></script>
+    <script src="js/nav.js" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="logo-link" href="index.html"><img class="logo-link" src="images/main-logo.png" alt="Silas Bartol site"></a>
+      <div class="title-and-nav">
+        <h2 class="page-title">Web Projects</h2>
+        <nav id="main-nav"></nav>
+      </div>
+    </header>
+    <main>
+      <p>A list of useful/fun web tools which I have developed.</p>
+
+      <h2>MCHS Schedule Extension</h2>
+        <p>A Chrome Extension I made which shows the current and upcomming schedule for Maranacook Community High School.</p>
+        <ul>
+          <li><a href="https://chrome.google.com/webstore/detail/mchs-schedule/deohnlephbbggpidopoedejkemmcffgp" target="_blank">Get the extension here</a></li>
+          <li><a href="https://github.com/silasiscool/MCHS_Schedule" target="_blank">Github Repository with code backups & schedule data</a></li>
+          <li><a href="https://silasiscool.github.io/MCHS_Schedule" target="_blank">Online Version</a></li>
+        </ul>
+
+      <h2>Silasify Bookmarklet</h2>
+        <p>A jokey Bookmarklet that I made which (temporarily, until reload) changes all images on the currently viewed site to everyones favorite picture.</p>
+        <style media="screen">
+          .bookmarklet-link {
+            visibility: hidden;
+            text-decoration: none;
+            color: black;
+          }
+          #silasify-link::before {
+            content: "Drag me to your bookmarks bar to add Silasify to chrome!";
+            visibility: visible;
+            border: 2px solid black;
+            border-radius: 7px;
+            padding: 5px;
+            box-sizing: border-box;
+          }
+        </style>
+        <a id="silasify-link" class="bookmarklet-link" href="javascript:
+        pictureUrl = 'https://lh3.googleusercontent.com/1gP1X0orGrulvgsLCCFg1KBcUUD8jj31WU5hlEJDmfSIC283qYcIunrf3GAnqwHEW5gFyKeXr5M9_02Le76S2unzT2dX0ZYqp2eD4Tu_TgzXLDmAO9GGRSKRHkY5qJoLV8FkkJlXgmN6RRo1VSiQyDTPjRtsHXvaQevA1YVz0zJQNC5PMeY3-vx8ODvMndcrDxRIwf-u8_FFXmC_LDc8sCFhTtaUURay3-Z-s8KlZ85tEvFudoqzXzj6hSJH27yuXkmom3RoAf2Mx4OpqZ-gM3FG_eRk8gWF__bs7q5FHEsexcNiAwty0209d63-YonAcZN77ce5JWRbN2ldYFZVqI9TyrMMPUwhBdW68qE8OPA2xe791BTqF8kF2daj7nqk4x9TG6r-wncWfubwp3aP3S5cKDgnqwEgevby9yhJ2OTYF2NH-01eL5m0RDanRHmJT3ZcUwypOX1DAQXjD_SSkMmE6OWhlACmfrLk6swwFjMDZhvxNP86cuGw45dlfYydecYoQD44Hrf3HKNy5ytMeTDBwAhZz38HKxWioOtFH83rEoJC6iuZPwsl8K5s0r7ZgspCT3fk1zJ044KXQy2-vw6ErG6hEcp2vfDCNw2xPE2YUMX54zRbyDQVpF_KjEMTayMg96r-Hv_FoSnMafFwVcclNUAH1w7xxDGx9eUPhDM-OsaSZw7iVnAsgmO6pR27604nqKR4gdsQrZKdGDfvckJ4f3SIjj-8qp9QuPFY2ArKDFz5Fc3zrvfjes93LX24gS71nYl9cFQLT4ZU-I0LgXc3oncS8r7juDbtjwmNP1FB7CPaZ4B9=w202-h534-no?authuser=0';
+        images = document.querySelectorAll('img');
+        images.forEach((item) => {
+          item.src = pictureUrl;
+          item.removeAttribute('srcset');
+        });
+        elements = document.querySelectorAll('*');
+        elements.forEach((item) => {
+          if (item.style.backgroundImage) {
+            item.style.backgroundImage = 'url(&quot;'+pictureUrl+'&quot;)';
+            item.style.backgroundSize = '100% 100%';
+          };
+        });
+        ">Silasify</a>
+    </main>
+  </body>
+</html>

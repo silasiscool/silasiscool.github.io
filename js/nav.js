@@ -18,4 +18,4 @@ function addNavItem(text, link) {
 // add each nav link
 addNavItem('Home','index.html');
 addNavItem('About Me', 'about-me.html');
-addNavItem('Projects','projects.html');
+addNavItem('Web Projects','web-projects.html');
