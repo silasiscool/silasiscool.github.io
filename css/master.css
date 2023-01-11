@@ -102,6 +102,6 @@ main {
 
 }
 
-h2 {
+h2:not(.top) {
   margin-top: 45px;
 }

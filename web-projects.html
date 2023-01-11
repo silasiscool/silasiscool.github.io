@@ -18,13 +18,14 @@
       </div>
     </header>
     <main>
-      <p>A list of useful/fun web tools which I have developed.</p>
-      <ul>
-        <li><a href="#mchs-schedule-extension">MCHS Schedule Extension</a></li>
-        <li><a href="#silas-bartol-site">Silas Bartol Site (This Site)</a></li>
-        <li><a href="#silasify-bookmarklet">Silasify Bookmarklet</a></li>
-        <li><a href="#term-searcher-bookmarklet">Term Searcher Bookmarklet</a></li>
-      </ul>
+      <h2 class="top">Contents</h2>
+        <p>A list of useful/fun web tools which I have developed.</p>
+        <ul>
+          <li><a href="#mchs-schedule-extension">MCHS Schedule Extension</a></li>
+          <li><a href="#silas-bartol-site">Silas Bartol Site (This Site)</a></li>
+          <li><a href="#silasify-bookmarklet">Silasify Bookmarklet</a></li>
+          <li><a href="#term-searcher">Term Searcher</a></li>
+        </ul>
 
       <h2 id="mchs-schedule-extension">MCHS Schedule Extension</h2>
         <p>A Chrome Extension I made which shows the current and upcomming schedule for Maranacook Community High School.</p>
@@ -60,10 +61,11 @@
         });
         ">Silasify</a>
 
-      <h2 id="term-searcher-bookmarklet">Term Searcher Bookmarklet</h2>
-        <p>A quite useful tool which gives you a prompt in which to paste a vocab list, or anything else similar, and opens new tabs to seach for each term.</p>
-        <p>Coming Soon (Have a working version, but want to make it work without changing chrome settingsu)</p>
-
+      <h2 id="term-searcher">Term Searcher</h2>
+        <p>A useful tool which gives you a prompt in which to paste a vocab list, or anything else similar, and opens new tabs to seach for each term.</p>
+        <p><a href="javascript:let test1 = window.open();let test2 = window.open();test1.close();test2.close();">Click Here</a> to check permissions if searcher is not working. (Click allow popups if dialog appears by search bar)</p>
+        <p><a href="javascript:prompt('Paste list of terms here (separated by newlines)').split('\n').forEach((term)=>window.open('https://www.google.com/search?q=%27+term.replace(/ /g, '+'),%27_blank%27));">Term Searcher</a> - Use this if terms do not include page numbers.</p>
+        <p><a href="javascript:prompt('Paste list of terms (with page numbers at end of each line) here (separated by newlines)').split('\n').forEach((term)=>window.open('https://www.google.com/search?q=%27+term.substring(0, term.lastIndexOf(' ')).replace(/ /g, '+'),%27_blank%27));">Term Searcher with Page Numbers</a> - Use this if terms do include page numbers, will remove last "word."</p>
     </main>
   </body>
 </html>
