@@ -16,6 +16,6 @@ function addNavItem(text, link) {
 };
 
 // add each nav link
-addNavItem('Home','index.html');
-addNavItem('About Me', 'about-me.html');
-addNavItem('Web Projects','web-projects.html');
+addNavItem('Home','index');
+addNavItem('About Me', 'about-me');
+addNavItem('Web Projects','web-projects');
