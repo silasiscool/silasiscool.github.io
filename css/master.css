@@ -1,14 +1,19 @@
 :root {
   --color-3-rgb: 71, 0, 163;
+  --dark-rgb: 0, 0, 0;
+
+  --max-normal-width: 500px;
 
   --color-1: #446DF6;
   --color-2: #F57600;
   --color-3: rgb(var(--color-3-rgb));
-  --dark: #000000;
+  --dark: rgb(var(--dark-rgb));
   --light: #ffffff;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+
 
 body {
   background-color: var(--light);
@@ -64,6 +69,34 @@ img.logo-link {
   background: rgba(var(--color-3-rgb), 7.5%);
 }
 
+@media (max-width: 550px) {
+  header {
+    flex-direction: column;
+    position: static;
+  }
+  #main-nav {
+    flex-direction: column;
+  }
+  .page-title {
+    text-align: left;
+  }
+}
+
 main {
   padding: 10px;
+}
+
+.updated-note {
+  font-style: italic;
+  font-size: 12.5px;
+  color: grey;
+}
+
+.bookmarklet-link {
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 5px;
+  box-sizing: border-box;
 }
