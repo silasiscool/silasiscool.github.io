@@ -19,6 +19,10 @@ body {
   background-color: var(--light);
   margin: 0;
   font-family: 'Alata', sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 header {
@@ -84,6 +88,7 @@ img.logo-link {
 
 main {
   padding: 10px;
+  overflow: auto;
 }
 
 .updated-note {
@@ -103,5 +108,6 @@ main {
 }
 
 h2:not(.top) {
-  margin-top: 45px;
+  margin-top: 30px;
+  padding-top: 15px;
 }
