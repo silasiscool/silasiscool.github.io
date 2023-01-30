@@ -5,15 +5,13 @@
   --max-normal-width: 500px;
 
   --color-1: #446DF6;
-  --color-2: #F57600;
+  --color-2: #BC5A00;
   --color-3: rgb(var(--color-3-rgb));
   --dark: rgb(var(--dark-rgb));
   --light: #ffffff;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
-
-
 
 body {
   background-color: var(--light);
@@ -89,6 +87,7 @@ img.logo-link {
 main {
   padding: 10px;
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
 .updated-note {
