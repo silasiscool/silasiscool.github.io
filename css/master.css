@@ -27,6 +27,10 @@ h1, h2, h3 {
   font-family: var(--heading-font);
 }
 
+p {
+  line-height: 1.7;
+}
+
 body {
   background-color: var(--background);
   margin: 0;
@@ -197,11 +201,6 @@ section.right {
   opacity: 60%;
 }
 
-#contact-links {
-  display: flex;
-  flex-direction: column;
-}
-
 a.with-icon {
   display: flex;
   align-items: center;
@@ -247,6 +246,11 @@ h1 {
 
 .link-list {
   float: left;
+  margin-bottom: 1.5rem;
+}
+
+.link-list p {
+  line-height: 0.75;
 }
 
 main {
