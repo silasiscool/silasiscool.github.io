@@ -216,7 +216,7 @@ a.with-icon {
 
 .reveal:not(.left, .right) {
   opacity: 0;
-  transition: opacity 2s;
+  transition: opacity 1s cubic-bezier(1, 0.22, 0.85, 0.91);
 }
 
 .reveal.left {
