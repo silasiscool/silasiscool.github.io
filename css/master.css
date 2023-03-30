@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap'); /* Alata */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap'); /* Inter */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap'); /* Noto Sans */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap'); /* Ubuntu */
 
 :root {
   --black: #000;
@@ -9,7 +11,7 @@
   --dark-accent: #000c2e;
   --light-accent: #839EF9;
   --heading-font: 'Alata', sans-serif;
-  --body-font: 'Roboto', sans-serif;
+  --body-font: 'Ubuntu', sans-serif;
 }
 
 @media (prefers-reduced-motion) {
