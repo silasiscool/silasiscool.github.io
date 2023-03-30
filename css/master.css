@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap'); /* Alata */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap'); /* Inter */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap'); /* Noto Sans */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap'); /* Ubuntu */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300&display=swap'); /* Ubuntu */
 
 :root {
   --black: #000;
@@ -10,8 +10,9 @@
   --background: #010618;
   --dark-accent: #000c2e;
   --light-accent: #839EF9;
-  --heading-font: 'Alata', sans-serif;
-  --body-font: 'Ubuntu', sans-serif;
+  --heading-font-family: 'Alata', sans-serif;
+  --body-font-family: 'Ubuntu', sans-serif;
+  --body-font-weight: 300;
 }
 
 @media (prefers-reduced-motion) {
@@ -33,7 +34,7 @@ h1, h2, h3, p {
 
 
 h1, h2, h3 {
-  font-family: var(--heading-font);
+  font-family: var(--heading-font-family);
 }
 
 p {
@@ -46,8 +47,8 @@ body {
   height: 100%;
   color: var(--white);
   overflow-y: auto;
-  /* overflow-x: hidden; */
-  font-family: var(--body-font);
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
   scroll-behavior: smooth;
 }
 
@@ -78,7 +79,7 @@ body {
   font-size: 1rem;
   color: inherit;
   padding: 5px;
-  font-family: var(--heading-font);
+  font-family: var(--heading-font-family);
 }
 
 a {
@@ -128,7 +129,7 @@ a:focus-visible {
   position: relative;
   top: 47%;
   transform: translateY(-50%);
-  width: 50%;
+  width: min(50%, 30rem);
 }
 
 #scroll-for-more {
@@ -206,7 +207,7 @@ section.right {
   gap: 1rem;
 }
 
-.updated-date {
+.updated-text {
   font-size: 0.6rem;
   font-style: italic;
   opacity: 60%;
@@ -219,7 +220,13 @@ a.with-icon {
   width: fit-content;
   padding: 0 1rem;
   flex-direction: row;
+  flex-wrap: wrap;
   /* color: var(--background) */
+}
+
+a.with-icon p {
+
+  overflow-wrap: break-word;
 }
 
 .reveal {
@@ -250,19 +257,22 @@ h1 {
 }
 
 #mchs-schedule-preview {
-  width: 20rem;
+  width: min(100%, 300px);
   border: none;
   aspect-ratio: 7/5;
-  float: right;
+  /* height: fit-content; */
+  /* float: right; */
+  /* display: none; */
 }
 
 .link-list {
-  float: left;
-  margin-bottom: 1.5rem;
+  /* float: left; */
+  margin-bottom: 1rem;
+
 }
 
 .link-list p {
-  line-height: 0.75;
+  margin: 8px;
 }
 
 main {
@@ -270,12 +280,21 @@ main {
 }
 
 footer {
-  background-color: var(--dark-accent);
-  padding: 2rem;
+  /* background-color: var(--dark-accent); */
   display: flex;
   align-items: center;
   margin-top: 50vh;
   flex-direction: column;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  top: -1rem;
 }
 
 footer p {
