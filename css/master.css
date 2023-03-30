@@ -59,6 +59,8 @@ body {
   opacity: 0;
   padding: 10px 0;
   z-index: 10;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 #main-nav::after {
@@ -277,4 +279,8 @@ footer {
 footer p {
   max-width: none;
   width: fit-content;
+}
+
+footer .link-list {
+  margin: 0;
 }
