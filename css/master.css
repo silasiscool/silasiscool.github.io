@@ -12,6 +12,13 @@
   --body-font: 'Roboto', sans-serif;
 }
 
+@media (prefers-reduced-motion) {
+  *,
+  *::after {
+    transition: none !important;
+  }
+}
+
 html {
   height: 100%;
   overflow-y: hidden;
@@ -207,6 +214,7 @@ a.with-icon {
   gap: 1rem;
   width: fit-content;
   padding: 0 1rem;
+  flex-direction: row;
   /* color: var(--background) */
 }
 
@@ -255,4 +263,18 @@ h1 {
 
 main {
   overflow: hidden;
+}
+
+footer {
+  background-color: var(--dark-accent);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  margin-top: 50vh;
+  flex-direction: column;
+}
+
+footer p {
+  max-width: none;
+  width: fit-content;
 }

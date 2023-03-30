@@ -1,14 +1,19 @@
 let mainTitle = document.getElementById('main-title');
 let mainNav = document.getElementById('main-nav');
 
-// document.body.scrollTop = 800; // TEMP: remove
+// document.getElementsByTagName('section')[2].scrollIntoView()
 
 document.body.addEventListener("scroll", onScroll);
 onScroll()
 
 function onScroll() {
   setNavOpacity()
-  setReveals()
+  if (window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true) {
+    document.querySelectorAll('.reveal').forEach(item => item.classList.add('show'));
+  } else {
+    setReveals()
+  }
 }
 
 function setNavOpacity() {
@@ -22,8 +27,8 @@ function setNavOpacity() {
   }
 }
 function setReveals() {
-  let elementViewMargin = 150;
-  document.querySelectorAll('.reveal').forEach((item, i) => {
+  let elementViewMargin = 100;
+  document.querySelectorAll('.reveal').forEach(item => {
     if (item.getBoundingClientRect().top < window.innerHeight - elementViewMargin) {
       item.classList.add('show');
     } else {
