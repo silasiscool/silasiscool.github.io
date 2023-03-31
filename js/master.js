@@ -27,7 +27,8 @@ function setNavOpacity() {
   }
 }
 function setReveals() {
-  let elementViewMargin = 100;
+  let elementViewMarginPercent = .10
+  let elementViewMargin = window.innerHeight * elementViewMarginPercent
   document.querySelectorAll('.reveal').forEach(item => {
     if (item.getBoundingClientRect().top < window.innerHeight - elementViewMargin) {
       item.classList.add('show');
