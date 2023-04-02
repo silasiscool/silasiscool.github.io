@@ -1,7 +1,20 @@
 let mainTitle = document.getElementById('main-title');
 let mainNav = document.getElementById('main-nav');
+let showNavButton = document.getElementById('show-nav');
 
-// document.getElementsByTagName('section')[2].scrollIntoView()
+showNavButton.addEventListener('click', () => {
+  showNavButton.classList.add('show-nav')
+  mainNav.classList.add('show-nav')
+  showNavButton.style.removeProperty('opacity')
+  mainNav.style.removeProperty('opacity')
+})
+
+document.querySelectorAll('#main-nav a').forEach((item) => {
+  item.addEventListener('click', () => {
+    onScroll()
+  })
+});
+
 
 document.body.addEventListener("scroll", onScroll);
 onScroll()
@@ -20,11 +33,23 @@ function setNavOpacity() {
   let currentScroll = document.body.scrollTop
   let maxScroll = mainTitle.scrollHeight;
   let startOffset = 0
+  let opacity = 0
   if (currentScroll >= maxScroll) {
-    mainNav.style.opacity = 1;
+    opacity = 1
   } else {
-    mainNav.style.opacity = ((currentScroll*(1-startOffset)) / maxScroll)+startOffset
+    opacity = ((currentScroll*(1-startOffset)) / maxScroll)+startOffset
   }
+  if (currentScroll >= maxScroll || currentScroll == 0) {
+    setTimeout(function () {
+      showNavButton.classList.remove('show-nav')
+      mainNav.classList.remove('show-nav')
+    }, 5e2);
+
+  }
+
+  // console.log(opacity);
+  mainNav.style.opacity = opacity;
+  showNavButton.style.opacity = 1 - opacity;
 }
 function setReveals() {
   let elementViewMarginPercent = .10

@@ -7,7 +7,8 @@
   --black: #000;
   --white: #FFF;
   --accent: #446DF6;
-  --background: #010618;
+  --background-rgb: 1, 6, 24;
+  --background: rgb(var(--background-rgb));
   --dark-accent: #000c2e;
   --light-accent: #839EF9;
   --heading-font-family: 'Alata', sans-serif;
@@ -58,11 +59,47 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  opacity: 0;
   padding: 10px 0;
   z-index: 10;
   flex-wrap: wrap;
   gap: 20px;
+  opacity: 0;
+}
+
+#main-nav.show-nav {
+  opacity: 1;
+}
+
+#show-nav.show-nav {
+  opacity: 0;
+}
+
+.show-nav {
+  transition: opacity 0.5s;
+}
+
+#show-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 15;
+  background: none;
+  padding: 0.75rem;
+  margin: 0.25rem;
+  border: none;
+  width: fit-content;
+}
+
+#show-nav:focus-visible {
+  border: 1px solid var(--white);
+}
+
+#show-nav i:hover {
+  opacity: 0.5;
+}
+
+button {
+  cursor: pointer;
 }
 
 #main-nav::after {
@@ -105,11 +142,11 @@ a:is(:hover, :focus:not(:focus-visible))::after {
   left: 0;
 }
 
-a:focus {
+:focus {
   outline: transparent;
 }
 
-a:focus-visible {
+:focus-visible {
   border: 1px solid var(--accent);
   border-radius: 5px;
 }
@@ -236,13 +273,17 @@ a.with-icon p {
   overflow-wrap: anywhere;
 }
 
+a:not(.with-icon) {
+  padding: 0.5rem 0;
+}
+
 .reveal {
-  transition: transform 1s;
+  transition: transform 0.5s cubic-bezier(0, 0.44, 0.69, 1.05);
 }
 
 .reveal:not(.left, .right) {
   opacity: 0;
-  transition: opacity 1s cubic-bezier(1, 0.22, 0.85, 0.91);
+  transition: opacity 0.5s cubic-bezier(1, 0.22, 0.85, 0.91);
 }
 
 .reveal.left {
@@ -274,7 +315,7 @@ h1 {
 
 .link-list {
   /* float: left; */
-  margin-bottom: 0rem;
+  margin-bottom: 1rem;
 
 }
 
