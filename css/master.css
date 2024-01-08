@@ -194,6 +194,12 @@ a:is(:hover, :focus:not(:focus-visible))::after {
   background: rgba(255, 255, 255, 0.75);
 }
 
+body {
+  scrollbar-color: rgba(255, 255, 255, 0.45) var(--background);
+  scrollbar-width: thin;
+}
+
+
 article {
   margin: auto;
   clear: both;
@@ -215,6 +221,10 @@ section {
   /* width: 275px; */
   /* overflow: auto; */
   box-sizing: border-box;
+}
+
+.sub-section {
+  padding-left: 1rem;
 }
 
 #contact {
@@ -306,6 +316,7 @@ h1 {
 
 #mchs-schedule-preview {
   width: min(100%, 300px);
+  height: 100px;
   border: none;
   aspect-ratio: 7/5;
   /* height: fit-content; */
@@ -335,6 +346,7 @@ footer {
   flex-direction: column;
   position: relative;
   padding: 0 2rem;
+  text-align: center;
 }
 
 footer::before {
