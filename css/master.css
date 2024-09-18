@@ -204,31 +204,30 @@ article {
   clear: both;
 }
 
-.article-content {
-  /* display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: space-between; */
-  /* display: flex; */
-  /* flex-direction: column; */
-}
-
 section {
   background-color: var(--dark-accent);
   padding: 2rem;
   margin: 1rem;
   /* width: 275px; */
   /* overflow: auto; */
+  max-width: 70ch;
   box-sizing: border-box;
+}
+
+/* @media (max-width: 130ch) {
+  section {
+    width: 100%;
+    margin: auto;
+    display: block;
+  }
+} */
+
+article {
+  outline: red dashed 1px
 }
 
 .sub-section {
   padding-left: 1rem;
-}
-
-#contact {
-  /* width: 0; */
-
 }
 
 .article-head {
