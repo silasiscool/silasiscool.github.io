@@ -222,10 +222,6 @@ section {
   }
 } */
 
-article {
-  outline: red dashed 1px
-}
-
 .sub-section {
   padding-left: 1rem;
 }
