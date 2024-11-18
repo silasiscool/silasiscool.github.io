@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap'); /* Alata */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap'); /* Inter */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap'); /* Noto Sans */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap'); /* Inter*/
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap'); Noto Sans */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300&display=swap'); /* Ubuntu */
 
 :root {
@@ -37,7 +37,7 @@ h1, h2, h3 {
   font-family: var(--heading-font-family);
 }
 
-p {
+p, li {
   line-height: 1.7;
 }
 
@@ -229,6 +229,8 @@ section {
 .article-head {
   margin: 1rem;
   padding: 2rem;
+  /* width: 100%; */
+  margin: auto;
 }
 
 section.left {
