@@ -15,7 +15,6 @@ document.querySelectorAll('#main-nav a').forEach((item) => {
   })
 });
 
-
 document.body.addEventListener("scroll", onScroll);
 onScroll()
 
@@ -47,10 +46,10 @@ function setNavOpacity() {
 
   }
 
-  // console.log(opacity);
   mainNav.style.opacity = opacity;
   showNavButton.style.opacity = 1 - opacity;
 }
+
 function setReveals() {
   let elementViewMarginPercent = .10
   let elementViewMargin = window.innerHeight * elementViewMarginPercent
