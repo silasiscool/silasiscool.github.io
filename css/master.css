@@ -173,6 +173,10 @@ a:is(:hover, :focus:not(:focus-visible))::after {
   bottom: 10%;
 }
 
+#scroll-for-more::after {
+  width: 0;
+}
+
 body:not(::-webkit-scrollbar) {
   scrollbar-color: rgba(255, 255, 255, 0.45) var(--background);
   scrollbar-width: thin;
