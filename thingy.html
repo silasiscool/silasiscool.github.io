@@ -1,0 +1,85 @@
+<h3>Find a tree:</h3>
+<input id="tree-ID-num" type="number" placeholder="####"/>
+<button id="submit-button">Go!</button>
+<a id="location-output" href="" target="_blank">Tree Location</a>
+<script>
+    const baseURL = "https://services2.arcgis.com/LNyGjxxQBXWW0vo0/arcgis/rest/services/Trees_6_view/FeatureServer/0/query";
+    const params = {
+        where:"heritage='Yes'",
+        fullText:"",
+        objectIds:"",
+        geometry:"",
+        geometryType:"esriGeometryEnvelope",
+        inSR:"",
+        spatialRel:"esriSpatialRelIntersects",
+        resultType:"none",
+        distance:0.0,
+        units:"esriSRUnit_Meter",
+        outDistance:"",
+        relationParam:"",
+        returnGeodetic:false,
+        outFields:"*",
+        returnGeometry:true,
+        featureEncoding:"esriDefault",
+        multipatchOption:"xyFootprint",
+        maxAllowableOffset:"",
+        geometryPrecision:"",
+        outSR:"",
+        defaultSR:"",
+        datumTransformation:"",
+        applyVCSProjection:false,
+        returnIdsOnly:false,
+        returnUniqueIdsOnly:false,
+        returnCountOnly:false,
+        returnExtentOnly:false,
+        returnQueryGeometry:false,
+        returnDistinctValues:false,
+        cacheHint:false,
+        collation:"",
+        orderByFields:"",
+        groupByFieldsForStatistics:"",
+        returnAggIds:false,
+        outStatistics:"",
+        having:"",
+        resultOffset:"",
+        resultRecordCount:"",
+        returnZ:false,
+        returnM:false,
+        returnTrueCurves:false,
+        returnExceededLimitFeatures:true,
+        quantizationParameters:"",
+        sqlFormat:"none",
+        f:"json",
+        token:""
+    };
+    
+
+    // Position converter code, AI generated
+    function webMercatorToLatLon(x, y) {
+    const R = 6378137.0; // Earth’s radius in meters
+    const lon = (x / R) * (180 / Math.PI);
+    const lat = (2 * Math.atan(Math.exp(y / R)) - Math.PI / 2) * (180 / Math.PI);
+    return { lat, lon };
+    }
+
+
+    let treeData
+    fetch(baseURL+"?"+(new URLSearchParams(params)).toString())
+        .then(res=>res.json())
+        .then(res=>treeData = res);
+
+    async function getTree(treeNum) {
+        return treeData.features.find(item=>item.attributes.assetid.slice(-4)==treeNum);
+    }
+
+    document.getElementById('submit-button').addEventListener('click',async ()=>{
+        let treeNum = document.getElementById('tree-ID-num').value;
+        let treeInfo = await(getTree(treeNum))
+        console.log(treeInfo);
+        let latLon = webMercatorToLatLon(treeInfo.geometry.x, treeInfo.geometry.y)
+        let mapsURL = "https://www.google.com/maps/place/"+latLon.lat+","+latLon.lon
+        document.getElementById('location-output').href=mapsURL
+    })
+
+    
+</script>
